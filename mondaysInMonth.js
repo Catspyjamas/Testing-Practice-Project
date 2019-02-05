@@ -19,14 +19,7 @@ function mondaysInMonth(month) {
         firstMonday = mondayThisWeek;
     }
 
-    // Set Monday counter
-    let numberOfMondays = 0;
-
-    numberOfMondays = Math.floor(
-        (first.daysInMonth() - firstMonday.date()) / 7 + 1
-    );
-
-    return numberOfMondays;
+    return Math.floor((first.daysInMonth() - firstMonday.date()) / 7 + 1);
 }
 
 module.exports = {
