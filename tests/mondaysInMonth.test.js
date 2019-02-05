@@ -26,10 +26,14 @@ test("returns an error if something different from a month is passed", () => {
     }).toThrow();
 });
 
-test("returns 4 for February 2019", () => {
+it(" doesn't include Mondays that come before the first day of the month", () => {
     expect(mondaysInMonth("2019-02")).toBe(4);
 });
 
-test("returns 5 for February 2016", () => {
+it("includes Mondays that are the first day of the month", () => {
     expect(mondaysInMonth("2016-02")).toBe(5);
+});
+
+it("does include all Mondays that come after the first day of the month", () => {
+    expect(mondaysInMonth("2016-05")).toBe(5);
 });
