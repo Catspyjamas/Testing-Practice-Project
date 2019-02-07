@@ -19,7 +19,7 @@ function mondaysInMonth(month) {
         firstMonday = mondayThisWeek;
     }
 
-    return Math.floor((first.daysInMonth() - firstMonday.date()) / 7 + 1);
+    return Math.floor((first.daysInMonth() - firstMonday.date()) / 7) + 1;
 }
 
 module.exports = {
