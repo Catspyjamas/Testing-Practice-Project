@@ -11,14 +11,14 @@
 //     findSkywalkersPromise,
 // } = require("./code66SkywalkersPromise");
 const {
-    findSkywalkersAsync,
-} = require("./code66SkywalkersAsync");
+    findSkywalkers,
+} = require("./skywalkers");
 
 // console.log(mondaysInMonth(month));
 // findSkywalkersPromise().then(resp =>
 //     console.log(resp))
 // .catch(error => console.log(error));
 
-findSkywalkersAsync().then(resp => {
+findSkywalkers().then(resp => {
     console.log(resp);
 });

@@ -25,7 +25,7 @@ async function fetchAllPeople() {
     }
 }
 
-function findSkywalkersAsync() {
+function findSkywalkers() {
     return fetchAllPeople();
     // const allPeople = await fetchAllPeople();
 
@@ -36,5 +36,5 @@ function findSkywalkersAsync() {
 }
 
 module.exports = {
-    findSkywalkersAsync,
+    findSkywalkers,
 };
