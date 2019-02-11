@@ -25,14 +25,32 @@ async function fetchAllPeople() {
     }
 }
 
-function findSkywalkers() {
-    return fetchAllPeople();
-    // const allPeople = await fetchAllPeople();
+// async function parse(arr) {
+//     try {
+//         const objPromises = []
+//         for (let objCount = 0; objCount <= arr.length; objCount++) {
+//             const parsedPromise = new Promise((resolve, reject) => {
+//                 JSON.parse(arr[objCount])
+//             })
+//         }
+//     }
+//     catch(err) {}
+// }
 
-    // console.log(allPeople.length);
-    // const skywalkers = people.filter(person => person.name.match(/([Ss]kywalker)/));
+async function findSkywalkers() {
+    try {
+        const results = await fetchAllPeople();
+        const resultsParsed = results.map(result => JSON.parse(result));
+        const people = [];
 
-    // return skywalkers.map(person => person.name);
+        resultsParsed.forEach(items => {
+            people.push(...items.results);
+        });
+
+        return people.filter(person => person.name.match(/([Ss]kywalker)/));
+    } catch (error) {
+        console.log("error: " + error);
+    }
 }
 
 module.exports = {
