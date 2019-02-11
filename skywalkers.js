@@ -37,9 +37,9 @@ async function fetchAllPeople() {
 //     catch(err) {}
 // }
 
-async function findSkywalkers() {
+async function findSkywalkers(asyncCallback = fetchAllPeople) {
     try {
-        const results = await fetchAllPeople();
+        const results = await asyncCallback();
         const resultsParsed = results.map(result => JSON.parse(result));
         const people = [];
 
